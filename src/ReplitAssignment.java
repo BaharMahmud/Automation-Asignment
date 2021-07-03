@@ -139,6 +139,7 @@ wb.findElement(By.id("rafael")).click();
         String expectedURL3="http://duotifyapp.us-east-2.elasticbeanstalk.com/register.php";
 
         assertEquals(currentURL3,expectedURL3);
+        wb.findElement(By.id("rafael")).click();
 
     }
 
