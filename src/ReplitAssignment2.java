@@ -35,31 +35,14 @@ public class ReplitAssignment2 {
         BufferedReader br = new BufferedReader(new FileReader("/Users/rustamovfamily/Documents/MOCK_DATA.csv"));
         br.readLine();
 
-/*
-String s;
-String[] arr=new String[5];
 
-List<String []>list= new ArrayList<String[]>();
-        String[][] list2=new String[100][5];
-   String [] line=br.readLine().split(",");
-    String[] line2=new String[5];
-     while((s=br.readLine())!=null){
-       list.add(line);
-
-   }
-     Random r=new Random();
-     int idx=r.nextInt(list.size());
-     line2=list.get(idx);
-
-        //arr=str;}
-*/
         Scanner sc=new Scanner(new File("/Users/rustamovfamily/Documents/MOCK_DATA.csv"));
 
 
- String thisword=null;
+
         int ran=(int)(Math.random()*99);
         List<String []> list= new ArrayList<String[]>();
-        //String[] line = br.readLine().split(",");
+
         String [] line=new String[5];
         sc.nextLine();
         while(sc.hasNextLine()){
@@ -78,10 +61,7 @@ List<String []>list= new ArrayList<String[]>();
         wd.findElement(By.id("ctl00_MainContent_fmwOrder_TextBox4")).sendKeys(line[4]);
         wd.findElement(By.id("ctl00_MainContent_fmwOrder_TextBox5")).sendKeys(line[5]);
 
-        /*Select slt=new Select(wd.findElement(By.id("ctl00_MainContent_fmwOrder_cardList")));
 
-        slt.selectByIndex(number);
-        */
         int number = (int) (Math.random() * 3);
 
 
