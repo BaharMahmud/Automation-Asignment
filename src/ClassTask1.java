@@ -13,11 +13,12 @@ public class ClassTask1 {
         WebDriver wd=new ChromeDriver();
         wd.get("http://secure.smartbearsoftware.com/samples/TestComplete12/WebOrders/Login.aspx");
 
-        WebElement inputBox1=wd.findElement(By.id("ct100_MainContent_username"));
+        WebElement inputBox1=wd.findElement(By.id("ctl00_MainContent_username"));
 String username="Tester";
 inputBox1.sendKeys(username);
-WebElement inputBox2=wd.findElement(By.id("ct100_MainContent_password"));
+WebElement inputBox2=wd.findElement(By.id("ctl00_MainContent_password"));
  String password="test";
+ 
  inputBox2.sendKeys(password);
         String actualTitle="Web Orders";
 
@@ -34,6 +35,8 @@ WebElement inputBox2=wd.findElement(By.id("ct100_MainContent_password"));
  List<WebElement> links = wd.findElements(By.tagName("a"));
  for (WebElement link : links) {
      System.out.println(link.getText()); }
+     
+ 
 
       wd.findElement(By.id("ctl00_logout")).click();
  }
