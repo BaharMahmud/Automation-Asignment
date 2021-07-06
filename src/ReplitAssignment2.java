@@ -13,6 +13,7 @@ import java.awt.*;
 import java.io.File;
 
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class ReplitAssignment2 {
@@ -33,6 +34,7 @@ public class ReplitAssignment2 {
 
         BufferedReader br = new BufferedReader(new FileReader("/Users/rustamovfamily/Documents/MOCK_DATA.csv"));
         br.readLine();
+
 /*
 String s;
 String[] arr=new String[5];
@@ -51,9 +53,26 @@ List<String []>list= new ArrayList<String[]>();
 
         //arr=str;}
 */
-        String[] line = br.readLine().split(",");
+        Scanner sc=new Scanner(new File("/Users/rustamovfamily/Documents/MOCK_DATA.csv"));
 
-        wd.findElement(By.id("ctl00_MainContent_fmwOrder_txtName")).sendKeys(line[0] + " " + line[1]);
+
+ String thisword=null;
+        int ran=(int)(Math.random()*99);
+        List<String []> list= new ArrayList<String[]>();
+        //String[] line = br.readLine().split(",");
+        String [] line=new String[5];
+        sc.nextLine();
+        while(sc.hasNextLine()){
+            list.add(sc.nextLine().split(","));
+        }
+
+        line= list.get(ran);
+
+
+
+
+
+        wd.findElement(By.id("ctl00_MainContent_fmwOrder_txtName")).sendKeys(line[0]+ " " + line[1]);
         wd.findElement(By.id("ctl00_MainContent_fmwOrder_TextBox2")).sendKeys(line[2]);
         wd.findElement(By.id("ctl00_MainContent_fmwOrder_TextBox3")).sendKeys(line[3]);
         wd.findElement(By.id("ctl00_MainContent_fmwOrder_TextBox4")).sendKeys(line[4]);
