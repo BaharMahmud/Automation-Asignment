@@ -82,11 +82,13 @@ public class ReplitAssignment3 {
         }
 
         wd.findElements(By.xpath("//div[@class='srp-header-sort-form-group']/select[@class='srp-header-sort-select srp-header-sort-select-desktop--srp']/*")).get(1).click();
-
+Assert.assertTrue(wd.findElement(By.id("value-5YJSA1E23JF245965")).getText().contains("$79,985"));
         wd.findElements(By.xpath("//div[@class='srp-header-sort-form-group']/select[@class='srp-header-sort-select srp-header-sort-select-desktop--srp']/*")).get(4).click();
-
-        //Assert.assertEquals(wd.findElement(By.xpath("//span[@class='srp-list-item-price'][1]")).getAttribute("$79,985"),"79,985");
-
-
-        wd.findElements(By.xpath("//div[@class='srp-header-sort-form-group']/select[@class='srp-header-sort-select srp-header-sort-select-desktop--srp']/*")).get(5).click();}
-}
+List<WebElement> mileage=wd.findElements(By.xpath("//div[@class='srp-list-item-basic-info srp-list-item-special-features']"));
+Assert.assertTrue(mileage.get(0).getText().contains("8,191 miles "));
+        Assert.assertTrue(mileage.get(10).getText().contains("112,234 miles "));
+        wd.findElements(By.xpath("//div[@class='srp-header-sort-form-group']/select[@class='srp-header-sort-select srp-header-sort-select-desktop--srp']/*")).get(5).click();
+ List<WebElement> newTooldyears=wd.findElements(By.xpath("//span[@class='srp-list-item-options-descriptions']"));
+ Assert.assertTrue(newTooldyears.get(0).getText().contains("2018"));
+        Assert.assertTrue(newTooldyears.get(11).getText().contains("2012"));
+}}
